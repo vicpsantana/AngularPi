@@ -1,0 +1,69 @@
+<div class="app-container">
+  <main class="main-content">
+    <div class="date-display">{{ today }}</div>
+
+    <div class="form-container">
+      <div class="form-header">
+        <h2>Novo cliente</h2>
+      </div>
+
+      <form class="client-form" (ngSubmit)="criarCliente()">
+        <label>
+          Login
+          <input type="text" [(ngModel)]="novoCliente.a_login" name="login" required />
+        </label>
+
+        <label class="campo-senha">
+          Senha
+          <input type="password" [(ngModel)]="novoCliente.b_senha" name="senha" required />
+        </label>
+
+        <label>
+          Nome
+          <input type="text" [(ngModel)]="novoCliente.c_nome" name="nome" required />
+        </label>
+
+        <label>
+          CPF
+          <input type="text" [(ngModel)]="novoCliente.d_cpf" name="cpf" required />
+        </label>
+
+        <div class="inline-group">
+          <label>
+            Celular
+            <input type="text" [(ngModel)]="novoCliente.e_celular" name="celular" required />
+          </label>
+
+          <label>
+            Data de nasc.
+            <input type="date" [(ngModel)]="novoCliente.f_data_nascimento" name="dataNascimento" required />
+          </label>
+        </div>
+
+        <label>
+          Endereço
+          <input type="text" [(ngModel)]="novoCliente.g_endereco" name="endereco" required />
+        </label>
+
+        <div class="inline-group">
+          <label>
+            Cidade
+            <input type="text" [(ngModel)]="novoCliente.h_cidade" name="cidade" required />
+          </label>
+
+          <label>
+            Estado
+            <input type="text" [(ngModel)]="novoCliente.i_estado" name="estado" required />
+          </label>
+        </div>
+
+        <label>
+          CEP
+          <input type="text" [(ngModel)]="novoCliente.j_cep" name="cep" required />
+        </label>
+
+        <button type="submit" class="save-button">Salvar</button>
+      </form>
+    </div>
+  </main>
+</div>

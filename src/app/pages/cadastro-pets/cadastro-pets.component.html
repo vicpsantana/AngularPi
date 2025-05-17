@@ -1,0 +1,52 @@
+<p>cadastro-pets works!</p>
+<div class="novo-animal-container">
+  <div class="form-section">
+    <h1>Novo animal</h1>
+    <form [formGroup]="petForm" (ngSubmit)="onSubmit()" class="form-animal">
+      <div class="input-group">
+        <label>ID do Usuário</label>
+        <input type="number" formControlName="id_usuario" (blur)="onIdUsuarioChange()"
+               [class.input-error]="!usuarioValido" required />
+        <span *ngIf="!usuarioValido" class="error-text">Usuário não cadastrado</span>
+        <div class="user-list">
+          <p>Usuários cadastrados:</p>
+          <ul>
+            <li *ngFor="let u of usuarios">{{ u.Id }} - {{ u.Nome }}</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <label>Nome do animal</label>
+        <input type="text" formControlName="nome" required />
+      </div>
+
+      <div class="input-group">
+        <label>Deficiências</label>
+        <input type="text" formControlName="deficiencias" />
+      </div>
+
+      <div class="input-group">
+        <label>Intolerâncias</label>
+        <input type="text" formControlName="intolerancias" />
+      </div>
+
+      <div class="row-group">
+        <div class="input-group">
+          <label>Data de nascimento</label>
+          <input type="date" formControlName="data_nascimento" />
+        </div>
+
+        <div class="input-group">
+          <label>Sexo</label>
+          <div class="radio-group">
+            <label><input type="radio" formControlName="sexo" value="M" /> Masculino</label>
+            <label><input type="radio" formControlName="sexo" value="F" /> Feminino</label>
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="save-btn">Salvar</button>
+    </form>
+  </div>
+</div>

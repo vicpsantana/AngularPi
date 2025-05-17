@@ -1,0 +1,84 @@
+.vet-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #fff;
+  position: relative;
+}
+
+.vet-login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.vet-logo {
+  width: 80px;
+  margin-bottom: 20px;
+}
+
+label {
+  align-self: flex-start;
+  font-size: 12px;
+  color: #0b7300;
+  margin-top: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 250px;
+  padding: 10px;
+  border: 1px solid #0b7300;
+  border-radius: 5px;
+  outline: none;
+}
+
+.vet-options {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 10px;
+  margin-top: 5px;
+}
+
+.vet-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.vet-esqueci-senha {
+  text-decoration: none;
+  color: black;
+}
+
+.vet-login-button {
+  background-color: #425661;
+  color: white;
+  padding: 10px 0;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  margin-top: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none; 
+}
+
+.vet-login-footer {
+  background-color: #425661;
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100%;
+  clip-path: polygon(
+    0 80%, 10% 60%, 20% 80%, 30% 60%, 40% 80%, 50% 60%,
+    60% 80%, 70% 60%, 80% 80%, 90% 60%, 100% 80%, 100% 100%, 0 100%
+  );
+}
