@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common'; // ✅ Import necessário
 
 @Component({
   selector: 'app-cadastro-pets',
@@ -13,7 +14,11 @@ export class CadastroPetsComponent implements OnInit {
   usuarios: any[] = [];
   usuarioValido: boolean = true;
 
-  constructor(private http: HttpClient, private fb: FormBuilder) {}
+  constructor(
+    private http: HttpClient,
+    private fb: FormBuilder,
+    private location: Location // ✅ Injeção do serviço Location
+  ) {}
 
   ngOnInit(): void {
     this.petForm = this.fb.group({
@@ -60,5 +65,10 @@ export class CadastroPetsComponent implements OnInit {
         alert('Erro ao cadastrar o animal.');
       }
     });
+  }
+
+  // ✅ Novo método para voltar à página anterior
+  voltarPagina(): void {
+    this.location.back();
   }
 }

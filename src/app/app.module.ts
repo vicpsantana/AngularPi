@@ -14,6 +14,8 @@ import { ClienteComponent } from './pages/cliente/cliente.component';
 import { CadastroAtendimentoComponent } from './pages/cadastro-atendimento/cadastro-atendimento.component';
 import { PetsComponent } from './pages/pets/pets.component';
 import { CadastroPetsComponent } from './pages/cadastro-pets/cadastro-pets.component';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { CadastroPetsComponent } from './pages/cadastro-pets/cadastro-pets.compo
       FormsModule,
       HttpClientModule,
       AppRoutingModule,
+      CommonModule,
+      RouterModule
   ],
   providers: [
     provideClientHydration(withEventReplay())

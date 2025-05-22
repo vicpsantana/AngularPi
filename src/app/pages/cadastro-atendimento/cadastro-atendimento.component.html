@@ -1,58 +1,60 @@
 <div class="atendimento-container">
   <h2>Cadastrar Atendimento</h2>
 
+  <!-- Botão Voltar -->
+  <button class="voltar-btn" (click)="voltar()">← Voltar</button>
 
-    <div class="form-grid">
-      <div class="form-group">
-        <label>ID do Animal</label>
-        <input type="text" formControlName="id_animal"
-               [readonly]="!!animalId"
-               [class.input-error]="atendimentoForm.get('id_animal')?.invalid && atendimentoForm.get('id_animal')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('id_animal')?.invalid && atendimentoForm.get('id_animal')?.touched">ID do animal é obrigatório.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Usuário Responsável (ID)</label>
-        <input type="text" formControlName="id_usuario"
-               [class.input-error]="atendimentoForm.get('id_usuario')?.invalid && atendimentoForm.get('id_usuario')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('id_usuario')?.invalid && atendimentoForm.get('id_usuario')?.touched">Usuário é obrigatório.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Descrição</label>
-        <input type="text" formControlName="descricao"
-               [class.input-error]="atendimentoForm.get('descricao')?.invalid && atendimentoForm.get('descricao')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('descricao')?.invalid && atendimentoForm.get('descricao')?.touched">Descrição é obrigatória.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Horas de Atendimento</label>
-        <input type="number" formControlName="atendimento_horas"
-               [class.input-error]="atendimentoForm.get('atendimento_horas')?.invalid && atendimentoForm.get('atendimento_horas')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('atendimento_horas')?.invalid && atendimentoForm.get('atendimento_horas')?.touched">Horas obrigatória.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Hora Agendada</label>
-        <input type="time" formControlName="hora_agendada"
-               [class.input-error]="atendimentoForm.get('hora_agendada')?.invalid && atendimentoForm.get('hora_agendada')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('hora_agendada')?.invalid && atendimentoForm.get('hora_agendada')?.touched">Hora obrigatória.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Data Agendada</label>
-        <input type="date" formControlName="data_agendada"
-               [class.input-error]="atendimentoForm.get('data_agendada')?.invalid && atendimentoForm.get('data_agendada')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('data_agendada')?.invalid && atendimentoForm.get('data_agendada')?.touched">Data obrigatória.</span>
-      </div>
-
-      <div class="form-group">
-        <label>Preço (R$)</label>
-        <input type="number" step="0.01" formControlName="preco"
-               [class.input-error]="atendimentoForm.get('preco')?.invalid && atendimentoForm.get('preco')?.touched" />
-        <span class="error-text" *ngIf="atendimentoForm.get('preco')?.invalid && atendimentoForm.get('preco')?.touched">Preço obrigatório.</span>
-      </div>
+  <div class="form-grid">
+    <div class="form-group">
+      <label>ID do Animal</label>
+      <input type="text" formControlName="id_animal"
+             [readonly]="!!animalId"
+             [class.input-error]="atendimentoForm.get('id_animal')?.invalid && atendimentoForm.get('id_animal')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('id_animal')?.invalid && atendimentoForm.get('id_animal')?.touched">ID do animal é obrigatório.</span>
     </div>
 
-    <button type="submit">Salvar Atendimento</button>
+    <div class="form-group">
+      <label>Usuário Responsável (ID)</label>
+      <input type="text" formControlName="id_usuario"
+             [class.input-error]="atendimentoForm.get('id_usuario')?.invalid && atendimentoForm.get('id_usuario')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('id_usuario')?.invalid && atendimentoForm.get('id_usuario')?.touched">Usuário é obrigatório.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Descrição</label>
+      <input type="text" formControlName="descricao"
+             [class.input-error]="atendimentoForm.get('descricao')?.invalid && atendimentoForm.get('descricao')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('descricao')?.invalid && atendimentoForm.get('descricao')?.touched">Descrição é obrigatória.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Horas de Atendimento</label>
+      <input type="number" formControlName="atendimento_horas"
+             [class.input-error]="atendimentoForm.get('atendimento_horas')?.invalid && atendimentoForm.get('atendimento_horas')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('atendimento_horas')?.invalid && atendimentoForm.get('atendimento_horas')?.touched">Horas obrigatória.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Hora Agendada</label>
+      <input type="time" formControlName="hora_agendada"
+             [class.input-error]="atendimentoForm.get('hora_agendada')?.invalid && atendimentoForm.get('hora_agendada')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('hora_agendada')?.invalid && atendimentoForm.get('hora_agendada')?.touched">Hora obrigatória.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Data Agendada</label>
+      <input type="date" formControlName="data_agendada"
+             [class.input-error]="atendimentoForm.get('data_agendada')?.invalid && atendimentoForm.get('data_agendada')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('data_agendada')?.invalid && atendimentoForm.get('data_agendada')?.touched">Data obrigatória.</span>
+    </div>
+
+    <div class="form-group">
+      <label>Preço (R$)</label>
+      <input type="number" step="0.01" formControlName="preco"
+             [class.input-error]="atendimentoForm.get('preco')?.invalid && atendimentoForm.get('preco')?.touched" />
+      <span class="error-text" *ngIf="atendimentoForm.get('preco')?.invalid && atendimentoForm.get('preco')?.touched">Preço obrigatório.</span>
+    </div>
+  </div>
+
+  <button type="submit" (click)="onSubmit()">Salvar Atendimento</button>
 </div>

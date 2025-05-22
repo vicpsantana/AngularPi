@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Location } from '@angular/common'; // 👈 IMPORTAÇÃO
 
 @Component({
   selector: 'app-cadastro-atendimento',
@@ -17,7 +18,8 @@ export class CadastroAtendimentoComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private location: Location // 👈 INJETADO AQUI
   ) {}
 
   ngOnInit(): void {
@@ -67,5 +69,9 @@ export class CadastroAtendimentoComponent implements OnInit {
         alert('Erro ao cadastrar atendimento.');
       }
     });
+  }
+
+  voltar(): void {
+    this.location.back(); // 👈 VOLTA PARA A PÁGINA ANTERIOR
   }
 }

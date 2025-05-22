@@ -1,5 +1,7 @@
 <div class="dashboard-container">
   <main class="main-content">
+
+    <!-- Barra de pesquisa -->
     <div class="search-bar">
       <input
         type="text"
@@ -9,11 +11,13 @@
       <button (click)="handleClear()">Limpar</button>
     </div>
 
+    <!-- Botões de ação -->
     <div class="action-buttons">
-      <button (click)="handleCreateNew()">Criar Novo Atendimento</button>
-      <button (click)="handleGoBack()">Voltar ao Menu Inicial</button>
+      <button class="create-button" [routerLink]="'/cadastro-atendimento'">Criar Novo</button>
+      <button class="back-button" (click)="handleGoBack()">Voltar ao Menu Inicial</button>
     </div>
 
+    <!-- Estatísticas -->
     <div class="stats">
       <div class="stat-card">
         <h2>{{ filteredAtendimentos.length }}</h2>
@@ -21,6 +25,7 @@
       </div>
     </div>
 
+    <!-- Lista de atendimentos -->
     <div class="cards-container">
       <div class="atendimento-card" *ngFor="let atendimento of filteredAtendimentos">
         <div class="card-header">
@@ -42,5 +47,6 @@
         </div>
       </div>
     </div>
+
   </main>
 </div>

@@ -1,12 +1,22 @@
-<p>cadastro-pets works!</p>
+
 <div class="novo-animal-container">
   <div class="form-section">
     <h1>Novo animal</h1>
+
+<!-- Botão de voltar estilizado -->
+<button type="button" class="back-btn" (click)="voltarPagina()">
+  ⬅ Voltar
+</button>
     <form [formGroup]="petForm" (ngSubmit)="onSubmit()" class="form-animal">
       <div class="input-group">
         <label>ID do Usuário</label>
-        <input type="number" formControlName="id_usuario" (blur)="onIdUsuarioChange()"
-               [class.input-error]="!usuarioValido" required />
+        <input
+          type="number"
+          formControlName="id_usuario"
+          (blur)="onIdUsuarioChange()"
+          [class.input-error]="!usuarioValido"
+          required
+        />
         <span *ngIf="!usuarioValido" class="error-text">Usuário não cadastrado</span>
         <div class="user-list">
           <p>Usuários cadastrados:</p>

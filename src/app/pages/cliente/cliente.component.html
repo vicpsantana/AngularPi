@@ -1,4 +1,4 @@
-<div class="dashboard-container" *ngIf="!loading && !error">
+ <div class="dashboard-container" *ngIf="!loading && !error">
   <main class="main-content">
     <div class="search-bar">
       <input
@@ -26,7 +26,7 @@
     </div>
 
     <div class="action-buttons">
-      <button (click)="handleCreateNew()">Criar Novo</button>
+      <button [routerLink]="'/cadastro-cliente'">Criar Novo</button>
       <button (click)="handleGoBack()">Voltar ao Menu Inicial</button>
     </div>
 
@@ -51,4 +51,4 @@
     <button (click)="handleEdit(animal)">Alterar</button>
     <button (click)="handleDelete(animal.Id)">Excluir</button>
   </div>
-</div>
+</div> 

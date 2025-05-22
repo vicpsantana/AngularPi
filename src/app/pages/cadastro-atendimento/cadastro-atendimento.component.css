@@ -2,15 +2,34 @@
   max-width: 700px;
   margin: 40px auto;
   background: #fff;
-  padding: 30px;
+  padding: 30px 40px;
   border-radius: 12px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  font-family: sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
 }
 
 .atendimento-container h2 {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
+  font-weight: 600;
+  color: #333;
+}
+
+.voltar-btn {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.voltar-btn:hover {
+  background-color: #ccc;
 }
 
 form {
@@ -21,8 +40,9 @@ form {
 
 .form-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px 24px;
+  margin-bottom: 30px;
 }
 
 .form-group {
@@ -30,32 +50,69 @@ form {
   flex-direction: column;
 }
 
-input, select {
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
+label {
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #555;
 }
 
-button {
+input, select {
+  padding: 10px 12px;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+}
+
+input:focus, select:focus {
+  border-color: #28a745;
+  outline: none;
+  box-shadow: 0 0 5px rgba(40, 167, 69, 0.5);
+}
+
+.input-error {
+  border-color: #d93025 !important;
+  box-shadow: 0 0 4px rgba(217, 48, 37, 0.7);
+}
+
+.error-text {
+  color: #d93025;
+  font-size: 0.85em;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+button[type="submit"] {
   align-self: flex-end;
   background: #28a745;
   color: white;
   border: none;
-  padding: 10px 20px;
+  padding: 12px 26px;
   border-radius: 6px;
   cursor: pointer;
+  font-size: 1em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
 }
 
-button:hover {
+button[type="submit"]:hover {
   background: #218838;
 }
 
-.input-error {
-  border-color: red;
-}
+/* Responsividade para telas pequenas */
+@media (max-width: 480px) {
+  .atendimento-container {
+    padding: 20px;
+  }
 
-.error-text {
-  color: red;
-  font-size: 0.85em;
-  margin-top: 4px;
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 16px 0;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    align-self: stretch;
+  }
 }

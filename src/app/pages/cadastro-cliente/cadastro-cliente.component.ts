@@ -7,7 +7,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './cadastro-cliente.component.html',
   styleUrl: './cadastro-cliente.component.css'
 })
-export class CadastroClienteComponent {BASE_URL = '/cadastro';
+export class CadastroClienteComponent {
+  BASE_URL = '/cadastro';
   idBusca: string = '';
   usuarioUnico: any = null;
   clientes: any[] = [];
@@ -27,6 +28,10 @@ export class CadastroClienteComponent {BASE_URL = '/cadastro';
   };
 
   constructor(private http: HttpClient) {}
+
+  voltarPagina() {
+    window.history.back();
+  }
 
   listarUsuarios() {
     this.http.get<any[]>(this.BASE_URL).subscribe({
