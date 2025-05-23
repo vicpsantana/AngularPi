@@ -11,56 +11,56 @@
       <form class="client-form" (ngSubmit)="criarCliente()">
         <label>
           Login
-          <input type="text" [(ngModel)]="novoCliente.a_login" name="login" required />
+          <input type="text" [(ngModel)]="novoCliente.login" name="login" required />
         </label>
 
         <label class="campo-senha">
           Senha
-          <input type="password" [(ngModel)]="novoCliente.b_senha" name="senha" required />
+          <input type="password" [(ngModel)]="novoCliente.senha" name="senha" required />
         </label>
 
         <label>
           Nome
-          <input type="text" [(ngModel)]="novoCliente.c_nome" name="nome" required />
+          <input type="text" [(ngModel)]="novoCliente.nome" name="nome" required />
         </label>
 
         <label>
           CPF
-          <input type="text" [(ngModel)]="novoCliente.d_cpf" name="cpf" required />
+          <input type="text" [(ngModel)]="novoCliente.cpf" name="cpf" required />
         </label>
 
         <div class="inline-group">
           <label>
             Celular
-            <input type="text" [(ngModel)]="novoCliente.e_celular" name="celular" required />
+            <input type="text" [(ngModel)]="novoCliente.celular" name="celular" required />
           </label>
 
           <label>
             Data de nasc.
-            <input type="date" [(ngModel)]="novoCliente.f_data_nascimento" name="dataNascimento" required />
+            <input type="date" [(ngModel)]="novoCliente.data_nascimento" name="dataNascimento" required />
           </label>
         </div>
 
         <label>
           Endereço
-          <input type="text" [(ngModel)]="novoCliente.g_endereco" name="endereco" required />
+          <input type="text" [(ngModel)]="novoCliente.endereco" name="endereco" required />
         </label>
 
         <div class="inline-group">
           <label>
             Cidade
-            <input type="text" [(ngModel)]="novoCliente.h_cidade" name="cidade" required />
+            <input type="text" [(ngModel)]="novoCliente.cidade" name="cidade" required />
           </label>
 
           <label>
             Estado
-            <input type="text" [(ngModel)]="novoCliente.i_estado" name="estado" required />
+            <input type="text" [(ngModel)]="novoCliente.estado" name="estado" required />
           </label>
         </div>
 
         <label>
           CEP
-          <input type="text" [(ngModel)]="novoCliente.j_cep" name="cep" required />
+          <input type="text" [(ngModel)]="novoCliente.cep" name="cep" required />
         </label>
 
         <button type="submit" class="save-button">Salvar</button>

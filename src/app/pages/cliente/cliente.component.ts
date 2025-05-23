@@ -24,7 +24,7 @@ export class ClienteComponent implements OnInit {
   }
 
   fetchData(): void {
-    this.http.get<any[]>('http://localhost:2025/cadastro').subscribe({
+    this.http.get<any[]>('http://localhost:8080/usuarios').subscribe({
       next: (data) => {
         this.animais = data;
         this.filteredAnimais = data;
@@ -52,7 +52,7 @@ export class ClienteComponent implements OnInit {
   }
 
   handleDelete(id: number): void {
-    this.http.delete(`http://localhost:2025/cadastro/${id}`).subscribe({
+    this.http.delete(`http://localhost:8080/usuarios/${id}`).subscribe({
       next: () => {
         this.animais = this.animais.filter(animal => animal.Id !== id);
         this.filteredAnimais = this.animais;

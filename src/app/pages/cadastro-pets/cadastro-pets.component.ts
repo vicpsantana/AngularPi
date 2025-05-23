@@ -30,14 +30,14 @@ export class CadastroPetsComponent implements OnInit {
       sexo: ['', Validators.required]
     });
 
-    this.http.get<any[]>('http://localhost:2025/usuarios').subscribe({
+    this.http.get<any[]>('http://localhost:8080/animais').subscribe({
       next: (data) => this.usuarios = data,
       error: (err) => console.error('Erro ao carregar usuários', err)
     });
   }
 
   verificarUsuario(id: number): void {
-    this.http.get(`http://localhost:2025/cadastro/${id}`).subscribe({
+    this.http.get(`http://localhost:8080/animais/${id}`).subscribe({
       next: (res) => this.usuarioValido = !!res,
       error: () => this.usuarioValido = false
     });
@@ -54,7 +54,7 @@ export class CadastroPetsComponent implements OnInit {
       return;
     }
 
-    this.http.post('http://localhost:2025/cadastroAnimal', this.petForm.value).subscribe({
+    this.http.post('http://localhost:8080/animais', this.petForm.value).subscribe({
       next: () => {
         alert('Animal cadastrado com sucesso!');
         this.petForm.reset();

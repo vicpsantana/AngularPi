@@ -8,23 +8,23 @@ import { HttpClient } from '@angular/common/http';
   styleUrl: './cadastro-cliente.component.css'
 })
 export class CadastroClienteComponent {
-  BASE_URL = '/cadastro';
+  BASE_URL = 'http://localhost:8080/usuarios';
   idBusca: string = '';
   usuarioUnico: any = null;
   clientes: any[] = [];
   today: string = new Date().toLocaleDateString('pt-BR');
 
   novoCliente = {
-    a_login: '',
-    b_senha: '',
-    c_nome: '',
-    d_cpf: '',
-    e_celular: '',
-    f_data_nascimento: '',
-    g_endereco: '',
-    h_cidade: '',
-    i_estado: '',
-    j_cep: ''
+    login: '',
+    senha: '',
+    nome: '',
+    cpf: '',
+    celular: '',
+    data_nascimento: '',
+    endereco: '',
+    cidade: '',
+    estado: '',
+    cep: ''
   };
 
   constructor(private http: HttpClient) {}
@@ -61,11 +61,11 @@ export class CadastroClienteComponent {
   validarCampos(): boolean {
     const cpfRegex = /^\d{11}$/;
     const celularRegex = /^\d{10,11}$/;
-    if (!cpfRegex.test(this.novoCliente.d_cpf)) {
+    if (!cpfRegex.test(this.novoCliente.cpf)) {
       alert('CPF inválido. Use apenas números (11 dígitos).');
       return false;
     }
-    if (!celularRegex.test(this.novoCliente.e_celular)) {
+    if (!celularRegex.test(this.novoCliente.celular)) {
       alert('Celular inválido. Use apenas números com DDD.');
       return false;
     }
@@ -76,16 +76,16 @@ export class CadastroClienteComponent {
     if (!this.validarCampos()) return;
 
     const payload = {
-      login: this.novoCliente.a_login,
-      senha: this.novoCliente.b_senha,
-      nome: this.novoCliente.c_nome,
-      cpf: this.novoCliente.d_cpf,
-      celular: this.novoCliente.e_celular,
-      data_nascimento: this.novoCliente.f_data_nascimento,
-      endereco: this.novoCliente.g_endereco,
-      cidade: this.novoCliente.h_cidade,
-      estado: this.novoCliente.i_estado,
-      cep: this.novoCliente.j_cep
+      login: this.novoCliente.login,
+      senha: this.novoCliente.senha,
+      nome: this.novoCliente.nome,
+      cpf: this.novoCliente.cpf,
+      celular: this.novoCliente.celular,
+      data_nascimento: this.novoCliente.data_nascimento,
+      endereco: this.novoCliente.endereco,
+      cidade: this.novoCliente.cidade,
+      estado: this.novoCliente.estado,
+      cep: this.novoCliente.cep
     };
 
     this.http.post(this.BASE_URL, payload).subscribe({
@@ -103,16 +103,16 @@ export class CadastroClienteComponent {
 
   resetarFormulario() {
     this.novoCliente = {
-      a_login: '',
-      b_senha: '',
-      c_nome: '',
-      d_cpf: '',
-      e_celular: '',
-      f_data_nascimento: '',
-      g_endereco: '',
-      h_cidade: '',
-      i_estado: '',
-      j_cep: ''
+      login: '',
+      senha: '',
+      nome: '',
+      cpf: '',
+      celular: '',
+      data_nascimento: '',
+      endereco: '',
+      cidade: '',
+      estado: '',
+      cep: ''
     };
   }
 }
